@@ -1,0 +1,96 @@
+/* 1. Define colors as CSS variables */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --header-text: white;
+    --card-bg: white;
+    --border-color: #ccc;
+    --btn-bg: #3498db;
+    --btn-text: white;
+}
+
+/* 2. Dark theme rule (just redefines the variables!) */
+body.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f9;
+    --header-bg: #111;
+    --card-bg: #2a2a2a;
+    --border-color: #555;
+    --btn-bg: #e74c3c;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box; /* Important so padding doesn't break width */
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* 3. Warning and Over classes for the character counter */
+.warning {
+    color: orange;
+}
+
+.over {
+    color: red;
+    font-weight: bold;
+}
